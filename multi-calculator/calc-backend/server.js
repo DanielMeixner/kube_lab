@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 
 // Routes
 app.get('/ping', function(req, res) {
-    console.log('received ping');
+    console.log('received ping - endpoint' + config.endpoint);
     res.send('Pong');
 });
 

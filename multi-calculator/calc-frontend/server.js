@@ -19,7 +19,7 @@ app.use(express.static(publicDir));
 
 // Routes
 app.get('/ping', function(req, res) {
-    console.log('received ping');
+    console.log('received ping - endpoint' + config.endpoint);
     res.send('Pong');
 });
 
@@ -39,6 +39,8 @@ app.post('/api/square', function(req, res) {
         'form': formData,
         'headers': req.headers
     };    
+
+    console.log(options.url);
     request.post(options, function(innererr, innerres, body) {
         var endDate = new Date();
         var duration = endDate - startDate;
